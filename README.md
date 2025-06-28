@@ -62,9 +62,10 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 ---
 
 ## Files Included
-- `ad-commands.md` – List of commands used with explanations  
-- `domain-findings.md` – Summary of users, groups, and DCs discovered  
-- `screenshots/` – Visual walkthrough of key steps
+
+- [List of commands used with explanations](ad-commands.md)
+- [Summary of users, groups, and DCs discovered](domain-findings.md)
+- [Visual Walkthrough  of key steps](screenshots/)
 
 ---
 
