@@ -62,7 +62,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 ## Files Included
 
 - [`guided-lab/README.md`](guided-lab/README.md): Detailed documentation of tasks using ADAC and PowerShell  
-- [`ad-commands.md`](ad-commands.md): PowerShell and command-line reference used throughout the lab  
+- [`ad-commands.md`](AD-commands.md): PowerShell and command-line reference used throughout the lab  
 - [`domain-findings.md`](domain-findings.md): Summary of domain structure, user accounts, and policy hierarchy  
 - [`screenshots/`](screenshots/): Folder containing labeled images from each step
 
