@@ -53,9 +53,16 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 ## Screenshots
 > All visuals stored in `screenshots/` subfolder
 
+<details>
+<summary><strong> Key Visuals</strong> (click to expand)</summary>
+
+<br>
+
 - ![OU Creation](screenshots/create-ou-adac.png)
 - ![User Management](screenshots/add-user-adac.png)
 - ![Group Policy Applied](screenshots/apply-gpo.png)
+
+</details>
 
 ---
 
