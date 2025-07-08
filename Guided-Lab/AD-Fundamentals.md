@@ -1,4 +1,4 @@
-# Foundations of Active Directory
+# Active Directory Fundamentals
 
 ## Project Overview
 This lab introduced me to the fundamentals of **Active Directory (AD)** within a simulated Windows enterprise environment. Through hands-on exercises, I explored domain structures, authentication processes, user enumeration, and common security misconfigurations. The project mirrors real-world AD environments used in corporate networks and lays the groundwork for both blue team and red team perspectives.
