@@ -96,7 +96,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 ![Create OU – ADAC](/screenshots/create-ou-adac.png)  
 ![Create Group – ADAC](/screenshots/create-group-adac.png)
 
-</details?
+</details>
 
 ---
 ## 5. Add Users to the Group
@@ -104,7 +104,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Locate users to add to the group
 - Right-click user → Add to Group → Specify Group
 
-###Powershell Equivalent
+### Powershell Equivalent
 Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
 <details>
