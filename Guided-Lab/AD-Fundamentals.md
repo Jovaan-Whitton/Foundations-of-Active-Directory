@@ -38,7 +38,15 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 -AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force)
 -Enabled $true
 
-![Add New User – ADAC](./screenshots/add-user-adac.png)  
+<details>
+  <summary> Add New User – Screenshots</summary>
+
+  <br>
+
+![Add New User – ADAC](/screenshots/add-user-adac.png)  
+![Add New User – ADAC](/screenshots/add-user-adac-confirm.png) 
+
+</details>
 
 ---
 
@@ -50,7 +58,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 ### PowerShell Equivalent
 - Remove-ADUser -Identity "pvalencia"
 
-![Delete User – ADAC](./screenshots/delete-user-adac.png) 
+![Delete User – ADAC](/screenshots/delete-user-adac.png) 
 
 ## 3. Unlock user
 ### ADAC Method
@@ -65,7 +73,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@ssswordReset!" -Force)
 - Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 
-![Unlock User – ADAC](./screenshots/unlock-user-PS.png)
+![Unlock User – ADAC](/screenshots/unlock-user-PS.png)
 
 ---
 ## 4. Create an OU and Add a Group
@@ -80,8 +88,15 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - New-ADOrganizationUnit -Name "Security Analysts" -Path "OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local"
 - New-ADGroup -Name "Security Analysts" -SamAccoutName analyst -Groupcategory Security GroupScope Global -DisplayName "Security Analysts" -Path "OU= Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local" -Descritption "Members of this group are Security Analysts under the IT OU."
 
-![Create OU – ADAC](./screenshots/create-ou-adac.png)  
-![Create Group – ADAC](./screenshots/create-group-adac.png)
+<details>
+  <summary> Create OU and Group – Screenshots</summary>
+
+  <br>
+
+![Create OU – ADAC](/screenshots/create-ou-adac.png)  
+![Create Group – ADAC](/screenshots/create-group-adac.png)
+
+</details?
 
 ---
 ## 5. Add Users to the Group
@@ -92,7 +107,15 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 ###Powershell Equivalent
 Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
-![Add to Group – ADAC](./screenshots/add-to-group-adac.png)  
+<details>
+  <summary> Add Users to Group – Screenshots</summary>
+
+  <br>
+
+![Add to Group – ADAC](/screenshots/add-to-group-adac.png)  
+![Add to Group – ADAC](/screenshots/add-to-group-adac-confirm.png)
+
+</details>
 
 --- 
 
@@ -109,9 +132,27 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 - Navigate to Interactive logon message text and interactive logon Message title → Right-click → Edit → Select Define Policy radial→ Define Policies
 - Navigate to Password Policy → Right-click Minimum Password length, Minimum Password Age, etc. → Properties → Select Define policy radial → Define policy
 
-![Copy GPO – PowerShell](./screenshots/gpo-copy-powershell.png)  
-![Link GPO – PowerShell](./screenshots/gpo-link-powershell.png)  
-![GPO Settings – GPMC](./screenshots/gpo-gpmc-settings.png)
+<details>
+  <summary> GPO Configuration – Screenshots</summary>
+
+  <br>
+ 
+![Copy GPO – PowerShell](/screenshots/gpo-copy-powershell.png)  
+![Link GPO – PowerShell](/screenshots/gpo-link-powershell.png)  
+![GPO Settings – GPMC](/screenshots/gpo-gpmc-settings.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings1.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings1-enable.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings2.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings2-enable.png)
+![GPO Settings – GPMC](/screenshots/gpmc-password-policy.png)
+![GPO Settings – GPMC](/screenshots/gpmc-passwordlen.png)
+![GPO Settings – GPMC](/screenshots/gpmc-password-history.png)
+![GPO Settings – GPMC](/screenshots/gpmc-password-age.png)
+![GPO Settings – GPMC](/screenshots/gpmc-password-complex.png)
+![GPO Settings – GPMC](/screenshots/gpmc-password-policy-confirm.png)
+
+</details>
+
 
 --- 
 
@@ -127,8 +168,16 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 - Add-Computer -ComputerName ACADEMY-IADD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
 - Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName, IPv4Address
 
- ![Join Domain – ADAC](./screenshots/join-domain-adac.png)  
- ![Move Computer to OU – ADAC](./screenshots/move-computer-ou.png)
+<details>
+  <summary> Join Domain & Move Computer – Screenshots</summary>
+
+  <br>
+
+ ![Join Domain – ADAC](/screenshots/join-domain-adac.png)  
+ ![Join Domain – ADAC](/screenshots/join-domain-adac-confirm.png)
+ ![Move Computer to OU – ADAC](/screenshots/move-computer-ou.png)
+
+ </details>
 
 ---
 
