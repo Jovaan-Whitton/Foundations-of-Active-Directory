@@ -65,7 +65,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@ssswordReset!" -Force)
 - Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 
-![Unlock User – ADAC](./screenshots/unlock-user-adac.png)
+![Unlock User – ADAC](./screenshots/unlock-user-PS.png)
 
 ---
 ## 4. Create an OU and Add a Group
