@@ -1,4 +1,4 @@
-# Intro to Active Directory – Hack The Box
+# Foundations of Active Direcctory
 
 ## Project Overview
 This lab introduced me to the fundamentals of **Active Directory (AD)** within a simulated Windows enterprise environment. Through hands-on exercises, I explored domain structures, authentication processes, user enumeration, and common security misconfigurations. The project mirrors real-world AD environments used in corporate networks and lays the groundwork for both blue team and red team perspectives.
@@ -6,68 +6,70 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 ---
 
 ## Objectives
-- Understand the structure of Active Directory and how domain components are organized
-- Perform enumeration of users, groups, and domain controllers
-- Explore AD authentication flows and permission hierarchies
+- Understand the structure of Active Directory and how domain components are organized  
+- Perform enumeration of users, groups, and domain controllers  
+- Explore AD authentication flows and permission hierarchies  
 - Identify typical attack surfaces in AD environments
 
 ---
 
 ## Tools & Technologies
 - **Platform**: Hack The Box Academy  
-- **Tools Used**: Windows Command Line, PowerShell, BloodHound (Intro), `net` commands, `whoami`, `nltest`, `dsquery`  
-- **Environment**: Simulated Windows Domain Environment  
-- **Skills Practiced**: AD Enumeration, Group Policy Basics, Access Mapping
+- **Tools Used**: Windows Command Line, PowerShell, ADAC, Group Policy Management Console  
+- **Commands Used**: `net`, `whoami`, `nltest`, `dsquery`, `Get-ADUser`, `New-ADUser`, `New-ADGroup`, `Add-ADGroupMember`, etc.  
+- **Environment**: Simulated Windows Domain  
+- **Skills Practiced**: AD Enumeration, Group & User Management, GPO Implementation
 
 ---
 
 ## Steps Taken
 
 1. **Initial AD Reconnaissance**
-   - Used commands like `net user /domain`, `nltest /dclist`, and `whoami /all` to explore domain details
+   - Executed commands like `net user /domain`, `nltest /dclist`, and `whoami /all` to gather domain and privilege info  
    - Identified domain users, groups, and the domain controller (DC)
 
-2. **Group and Permission Discovery**
-   - Enumerated built-in security groups and administrative privileges
-   - Mapped relationships between users and groups
+2. **Organizational Unit & Group Creation**
+   - Used ADAC to create an `OU` named `Marketing`, and added a group `Marketing-Team` to it  
+   - Created and deleted users as part of lifecycle management
 
-3. **Authentication Understanding**
-   - Explored how Kerberos and NTLM authentication operate in AD
-   - Reviewed token privileges, impersonation, and SID structures
+3. **Group Membership & GPO Assignment**
+   - Added users to the `Marketing-Team` group  
+   - Created a Group Policy Object (`Marketing-Policy`) and linked it to the OU to enforce configuration rules
 
-4. **Intro to Security Posture**
-   - Identified potentially misconfigured users or groups
-   - Examined how AD structure can be abused if not properly secured
+4. **PowerShell Replication**
+   - Repeated all tasks from user, group, and OU creation to GPO linking using `ActiveDirectory` PowerShell module  
+   - Demonstrated automation-ready workflow for enterprise use
 
 ---
 
 ## Key Skills & Learnings
-- Developed working knowledge of AD layout and command-line interaction
-- Practiced user and group enumeration to support identity auditing
-- Gained foundational understanding of Windows domain authentication
-- Identified risks that arise from excessive privileges or weak group policy
+- Built hands-on familiarity with AD layout, schema, and administrative interfaces  
+- Practiced both GUI and CLI approaches to AD administration  
+- Strengthened understanding of domain authentication, GPO behavior, and identity management  
+- Gained insight into operational and security implications of AD environments
 
 ---
 
 ## Screenshots
-> Store images in a `screenshots/` folder:
+> All visuals stored in `screenshots/` subfolder
 
-- ![AD User Enumeration](screenshots/net-user-domain.png)
-- ![Group Membership](screenshots/group-membership.png)
-- ![DC Identification](screenshots/domain-controller.png)
+- ![OU Creation](screenshots/create-ou.png)
+- ![User Management](screenshots/add-user.png)
+- ![Group Policy Applied](screenshots/apply-gpo.png)
 
 ---
 
 ## Files Included
 
-- [List of commands used with explanations](ad-commands.md)
-- [Summary of users, groups, and DCs discovered](domain-findings.md)
-- [Visual Walkthrough  of key steps](screenshots/)
+- [`guided-lab/README.md`](guided-lab/README.md): Detailed documentation of tasks using ADAC and PowerShell  
+- [`ad-commands.md`](ad-commands.md): PowerShell and command-line reference used throughout the lab  
+- [`domain-findings.md`](domain-findings.md): Summary of domain structure, user accounts, and policy hierarchy  
+- [`screenshots/`](screenshots/): Folder containing labeled images from each step
 
 ---
 
 ## Result
-Completed the lab with a full understanding of Active Directory fundamentals and its importance in networked environments. The experience strengthened my ability to work in AD-supported enterprise systems, a critical skill for IT Support and SOC roles.
+Completed the lab with a strong grasp of Active Directory structure, administration, and security posture. This project developed my skills in managing AD-supported environments, essential for roles in **IT support**, **SOC operations**, and **enterprise security**.
 
 ---
 
@@ -76,3 +78,4 @@ I'm seeking entry-level roles in **IT Support**, **SOC Analysis**, or **Security
 
 **Email**: jovaan.jwhitton@gmail.com  
 **LinkedIn**: [linkedin.com/in/jovaan-whitton-profile](https://linkedin.com/in/jovaan-whitton-profile)
+
