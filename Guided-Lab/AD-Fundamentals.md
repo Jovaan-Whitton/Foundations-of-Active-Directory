@@ -38,6 +38,8 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 -AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force) `
 -Enabled $true
 
+![Add New User – ADAC](./screenshots/add-user-adac.png)  
+
 ---
 
 ## 2. Delete a User
@@ -47,6 +49,8 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 
 ### PowerShell Equivalent
 - Remove-ADUser -Identity "pvalencia"
+
+![Delete User – ADAC](./screenshots/delete-user-adac.png) 
 
 ## 3. Unlock user
 ### ADAC Method
@@ -61,6 +65,8 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@ssswordReset!" -Force)
 - Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 
+![Unlock User – ADAC](./screenshots/unlock-user-adac.png)
+
 ---
 ## 4. Create an OU and Add a Group
 ### ADAC Method
@@ -74,6 +80,9 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - New-ADOrganizationUnit -Name "Security Analysts" -Path "OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local"
 - New-ADGroup -Name "Security Analysts" -SamAccoutName analyst -Groupcategory Security GroupScope Global -DisplayName "Security Analysts" -Path "OU= Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local" -Descritption "Members of this group are Security Analysts under the IT OU."
 
+![Create OU – ADAC](./screenshots/create-ou-adac.png)  
+![Create Group – ADAC](./screenshots/create-group-adac.png)
+
 ---
 ## 5. Add Users to the Group
 ### ADAC Method
@@ -82,6 +91,8 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 
 ###Powershell Equivalent
 Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
+
+![Add to Group – ADAC](./screenshots/add-to-group-adac.png)  
 
 --- 
 
@@ -98,6 +109,10 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 - Navigate to Interactive logon message text and interactive logon Message title → Right-click → Edit → Select Define Policy radial→ Define Policies
 - Navigate to Password Policy → Right-click Minimum Password length, Minimum Password Age, etc. → Properties → Select Define policy radial → Define policy
 
+![Copy GPO – PowerShell](./screenshots/gpo-copy-powershell.png)  
+![Link GPO – PowerShell](./screenshots/gpo-link-powershell.png)  
+![GPO Settings – GPMC](./screenshots/gpo-gpmc-settings.png)
+
 --- 
 
 ## 7. Adding a Remote computer to a domain & Moving to a New OU
@@ -112,6 +127,8 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 - Add-Computer -ComputerName ACADEMY-IADD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
 - Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName, IPv4Address
 
+ ![Join Domain – ADAC](./screenshots/join-domain-adac.png)  
+ ![Move Computer to OU – ADAC](./screenshots/move-computer-ou.png)
 
 ---
 
