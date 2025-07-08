@@ -63,7 +63,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 
 - [Guided-Lab](/Guided-Lab/AD-Fundamentals.md): Detailed documentation of tasks using ADAC and PowerShell  
 - [ad-commands.md](/Guided-Lab/AD-Commands.md): PowerShell and command-line reference used throughout the lab  
-- [`screenshots/`](screenshots/): Folder containing labeled images from each step
+- [screenshots](screenshots/): Folder containing labeled images from each step
 
 ---
 
