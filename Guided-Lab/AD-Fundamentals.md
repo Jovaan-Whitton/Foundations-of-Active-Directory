@@ -140,7 +140,7 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 ![Copy GPO – PowerShell](/screenshots/gpo-copy-powershell.png)  
 ![Link GPO – PowerShell](/screenshots/gpo-link-powershell.png)  
 ![GPO Settings – GPMC](/screenshots/gpo-gpmc-settings.png)
-![GPO Settings – GPMC](/screenshots/gpmc-settings1.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings1-adac.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings1-enable.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings2.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings2-enable.png)
