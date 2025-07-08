@@ -32,10 +32,10 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 - Attributes included are full name, email, display name and that the user must change password at next logon
 
 ### PowerShell Equivalent
-New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -AsPlainText(Read-Host "enter a secure password") -Force) -enabled $true -other attributes @{'title' "Analyst" ; 'mail' = "a.castillo@inlanefreight.local}
--UserPrincipalName "jane.doe@labdomain.local" `
--Path "OU=Marketing,DC=labdomain,DC=local" `
--AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force) `
+New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -AsPlainText(Read-Host "enter a secure password") -Force) -enabled $true -other attributes @{'title' "Analyst" ; 'mail' = `"a.castillo@inlanefreight.local"`}
+- UserPrincipalName `"jane.doe@labdomain.local"` 
+-`Path "OU=Marketing,DC=labdomain,DC=local" `
+-AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force)
 -Enabled $true
 
 ![Add New User – ADAC](./screenshots/add-user-adac.png)  
