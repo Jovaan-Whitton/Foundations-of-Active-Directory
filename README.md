@@ -66,7 +66,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
   
 - **Group Policy Applied**
   
-[Group Policy Applied](screenshots/gpmc-password-policy-confirm.png)
+![Group Policy Applied](screenshots/gpmc-password-policy-confirm.png)
 
 </details>
 
