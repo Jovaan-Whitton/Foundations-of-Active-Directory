@@ -44,6 +44,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
   <br>
 
 ![Add New User – ADAC](/screenshots/add-user-adac.png)  
+![Add New User – ADAC](/screenshots/add-user1-adac.png)
 ![Add New User – ADAC](/screenshots/add-user-adac-confirm.png) 
 
 </details>
@@ -58,6 +59,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 ### PowerShell Equivalent
 - Remove-ADUser -Identity "pvalencia"
 
+![Delete User – ADAC](/screenshots/user-search-adac.png) 
 ![Delete User – ADAC](/screenshots/delete-user-adac.png) 
 
 ## 3. Unlock user
@@ -73,7 +75,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@ssswordReset!" -Force)
 - Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 
-![Unlock User – ADAC](/screenshots/unlock-user-PS.png)
+![Unlock User – ADAC](/screenshots/unlock-and-change-pswd-adac.png)
 
 ---
 ## 4. Create an OU and Add a Group
@@ -93,7 +95,9 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 
   <br>
 
-![Create OU – ADAC](/screenshots/create-ou-adac.png)  
+![Create OU – ADAC](/screenshots/adding-ou-adac.png)
+![Create OU – ADAC](/screenshots/create-ou-adac.png) 
+![Create OU – ADAC](/screenshots/adding-new-group-adac.png)
 ![Create Group – ADAC](/screenshots/create-group-adac.png)
 
 </details>
@@ -137,13 +141,16 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
   <br>
  
-![Copy GPO – PowerShell](/screenshots/gpo-copy-powershell.png)  
-![Link GPO – PowerShell](/screenshots/gpo-link-powershell.png)  
+![Copy GPO – PowerShell](/screenshots/gpo-copy-link-PS.png)   
 ![GPO Settings – GPMC](/screenshots/gpo-gpmc-settings.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings1-adac.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings1-enable.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings2.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings2-enable.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings2-enable.png)
+![GPO Settings – GPMC](/screenshots/gpmc-interactive-settings.png)
+![GPO Settings – GPMC](/screenshots/gpmc-interactive-settings1.png)
+![GPO Settings – GPMC](/screenshots/gpmc-interactive-settings2.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-password-policy.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-passwordlen.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-password-history.png)
@@ -165,7 +172,7 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 - Move the computer to the Security Analysts OU we created.
 
 ### Powershell Equivalent
-- Add-Computer -ComputerName ACADEMY-IADD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
+- Add-Computer -ComputerName ACADEMY-IAD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
 - Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName, IPv4Address
 
 <details>
