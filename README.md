@@ -56,8 +56,6 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 <details>
 <summary><strong> Key Visuals</strong> (click to expand)</summary>
 
-<br>
-
 - ![OU Creation](screenshots/create-ou-adac.png)
 - ![User Management](screenshots/add-user-adac.png)
 - ![Group Policy Applied](screenshots/apply-gpo.png)
@@ -69,7 +67,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 ## Files Included
 
 - [Guided-Lab](/Guided-Lab/AD-Fundamentals.md): Detailed documentation of tasks using ADAC and PowerShell  
-- [ad-commands.md](/Guided-Lab/AD-Commands.md): PowerShell and command-line reference used throughout the lab  
+- [ad-commands.md](/Guided-Lab/AD-Commands.md): PowerShell Command line reference used throughout the lab  
 - [screenshots](screenshots/): Folder containing labeled images from each step
 
 ---
