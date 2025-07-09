@@ -130,8 +130,8 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
   <br>
 
-![Add to Group – ADAC](/screenshots/add-to-group1-adac.png)  
-![Add to Group – ADAC](/screenshots/add-to-group2-adac.png) 
+![Add to Group – ADAC](/screenshots/add-user-to-group1.png)  
+![Add to Group – ADAC](/screenshots/add-user-to-group2.png) 
 ![Add to Group – ADAC](/screenshots/add-to-group-adac-confirm.png)
 
 </details>
