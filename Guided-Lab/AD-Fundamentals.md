@@ -59,8 +59,15 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 ### PowerShell Equivalent
 - Remove-ADUser -Identity "pvalencia"
 
+<details>
+  <summary> Delete user – Screenshots</summary>
+
+  <br>
+
 ![Delete User – ADAC](/screenshots/user-search-adac.png) 
 ![Delete User – ADAC](/screenshots/delete-user-adac.png) 
+
+</details>
 
 ## 3. Unlock user
 ### ADAC Method
@@ -75,7 +82,14 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@ssswordReset!" -Force)
 - Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 
+<details>
+  <summary> Unlock user – Screenshots</summary>
+
+  <br>
+
 ![Unlock User – ADAC](/screenshots/unlock-and-change-pswd-adac.png)
+
+</details>
 
 ---
 ## 4. Create an OU and Add a Group
@@ -116,7 +130,8 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
   <br>
 
-![Add to Group – ADAC](/screenshots/add-to-group-adac.png)  
+![Add to Group – ADAC](/screenshots/add-to-group1-adac.png)  
+![Add to Group – ADAC](/screenshots/add-to-group2-adac.png) 
 ![Add to Group – ADAC](/screenshots/add-to-group-adac-confirm.png)
 
 </details>
@@ -142,11 +157,9 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
   <br>
  
 ![Copy GPO – PowerShell](/screenshots/gpo-copy-link-PS.png)   
-![GPO Settings – GPMC](/screenshots/gpo-gpmc-settings.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings1-adac.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings1-enable.png)
-![GPO Settings – GPMC](/screenshots/gpmc-settings2.png)
-![GPO Settings – GPMC](/screenshots/gpmc-settings2-enable.png)
+![GPO Settings – GPMC](/screenshots/gpmc-settings2-adac.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-settings2-enable.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-interactive-settings.png)
 ![GPO Settings – GPMC](/screenshots/gpmc-interactive-settings1.png)
