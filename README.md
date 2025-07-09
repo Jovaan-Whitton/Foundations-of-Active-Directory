@@ -58,7 +58,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 
 - ![OU Creation](screenshots/create-ou-adac.png)
 - ![User Management](screenshots/add-user-adac.png)
-- ![Group Policy Applied](screenshots/apply-gpo.png)
+- ![Group Policy Applied](screenshots/gpmc-password-policy-confirm.png)
 
 </details>
 
