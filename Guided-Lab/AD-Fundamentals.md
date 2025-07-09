@@ -53,8 +53,9 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 
 ## 2. Delete a User
 ### ADAC Method
-- Locate the user by right clicking on the find option of the employees OU.
-- Right-click → Delete
+- Locate the user by right clicking on the "search under this node" option of the Employees OU.
+- Search for employee "Paul Valencia"
+- Right-click → Delete → Yes
 
 ### PowerShell Equivalent
 - Remove-ADUser -Identity "pvalencia"
