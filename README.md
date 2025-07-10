@@ -50,7 +50,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 
 ---
 
-## All visuals stored in `screenshots/` subfolder
+## All visuals stored in [`screenshots/`](screenshots/) subfolder
 
 <details>
 <summary><strong> Key Visuals</strong> (click to expand)</summary>
