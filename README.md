@@ -84,9 +84,4 @@ Completed the lab with a strong grasp of Active Directory structure, administrat
 
 ---
 
-## Let’s Connect
-I'm seeking entry-level roles in **IT Support**, **SOC Analysis**, or **Security Operations** where I can apply my AD knowledge and hands-on cybersecurity skills.
-
-**Email**: jovaan.jwhitton@gmail.com  
-**LinkedIn**: [linkedin.com/in/jovaan-whitton-profile](https://linkedin.com/in/jovaan-whitton-profile)
-
+*[Visit My GitHub Landing Page](https://github.com/Jovaan-Whitton)*
