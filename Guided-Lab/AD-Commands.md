@@ -85,7 +85,7 @@ Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | Select CN, CanonicalN
 
 ---
 
-## 💡 Tip:
+## Tip:
 Use `Get-Help <CommandName> -Examples` for more use cases or run `Import-Module ActiveDirectory` if AD commands are unavailable.
 
 ---
