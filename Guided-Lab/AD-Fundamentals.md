@@ -39,8 +39,8 @@ In this lab, I was tasked with administering and securing a corporate Active Dir
 - Attributes included are full name, email, display name and that the user must change password at next logon
 
 ### PowerShell Equivalent
-```
-New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -AsPlainText(Read-Host "enter a secure password") -Force) -enabled $true -other attributes @{'title' "Analyst" ; 'mail' = `"a.castillo@inlanefreight.local"`}
+```powershell
+New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -AsPlainText(Read-Host "enter a secure password") -Force) -enabled $true -other attributes @{'title' "Analyst" ; 'mail' = "a.castillo@inlanefreight.local"}
 ```
 
 <details>
@@ -63,7 +63,7 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Right-click → Delete → Yes
 
 ### PowerShell Equivalent
-```
+```powershell
 Remove-ADUser -Identity "pvalencia"
 ```
 
@@ -86,13 +86,13 @@ Remove-ADUser -Identity "pvalencia"
 - Ensure unlock users' account radial is selected
 
 ### Powershell Equivalent
-```
+```powershell
 Unlock-ADAccount -Identity amasters
 ```
-```
+```powershell
 Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@sswordReset!" -Force)
 ```
-```
+```powershell
 Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 ```
 <details>
@@ -114,10 +114,10 @@ Set-ADUser -Identity amasters -ChangePasswordatlogon $true
 - Ensure the Group Scope is set to "Domain Local" and the Group Type is set to "Security"
 
 ### Powershell Equivalent
-```
+```powershell
 New-ADOrganizationUnit -Name "Security Analysts" -Path "OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local"
 ```
-```
+```powershell
 New-ADGroup -Name "Security Analysts" -SamAccoutName analyst -Groupcategory Security GroupScope Global -DisplayName "Security Analysts" -Path "OU= Security Analysts,OU=IT,OU=HQ-
 NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=local" -Descritption "Members of this group are Security Analysts under the IT OU."
 ```
@@ -141,7 +141,7 @@ NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=local" -Descritption "Members of th
 - Right-click user → Add to Group → Specify Group
 
 ### Powershell Equivalent
-```
+```powershell
 Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 ```
 
@@ -160,10 +160,10 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
 ## 6. Apply Group Policy to the OU using Powershell and Modify User Configurations via GPMC
 ### PowerShell
-```
+```powershell
 Copy-GPO -SourceName "Logon Banner" -TargetName "Security Analysts Control"
 ```
-```
+```powershell
 New-GPLink -Name "Security Analysts Control" -Target "OU= Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=local" -LinkEnabled yes
 ````
 
@@ -197,7 +197,6 @@ New-GPLink -Name "Security Analysts Control" -Target "OU= Security Analysts,OU=I
 
 </details>
 
-
 --- 
 
 ## 7. Adding a Remote computer to a domain & Moving to a New OU
@@ -209,10 +208,10 @@ New-GPLink -Name "Security Analysts Control" -Target "OU= Security Analysts,OU=I
 - Move the computer to the Security Analysts OU we created.
 
 ### Powershell Equivalent
-```
+```powershell
 Add-Computer -ComputerName ACADEMY-IAD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
 ```
-```
+```powershell
 Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName, IPv4Address
 ```
 
