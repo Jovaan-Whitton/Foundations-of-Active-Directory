@@ -5,6 +5,12 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 
 ---
 
+## Scenario Background
+
+In this lab, I was tasked with administering and securing a corporate Active Directory environment modeled after a fictional organization. As part of a junior IT support role, my responsibilities included creating users and groups, managing permissions, applying security policies, and joining new hosts to the domain. These exercises simulate realistic tasks performed by sysadmins and IT support specialists in enterprise environments, preparing me for both defensive (blue team) and administrative duties in the field.
+
+---
+
 ## Lab Objectives
 - Understand the structure of Active Directory and how domain components are organized
 - Create Organizational Units (OUs)  
