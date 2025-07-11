@@ -5,6 +5,15 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 
 ---
 
+## Why Active Directory Matters
+Active Directory serves as the backbone of identity and access management in nearly all enterprise Windows networks. Mastering its functionality is critical for:
+- Securing digital assets and managing permissions
+- Detecting misconfigurations or privilege escalations
+- Supporting user lifecycle operations within organizations
+- Laying the foundation for red and blue team security operations
+
+---
+
 ## Objectives
 - Understand the structure of Active Directory and how domain components are organized  
 - Perform enumeration of users, groups, and domain controllers  
@@ -16,7 +25,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 ## Tools & Technologies
 - **Platform**: Hack The Box Academy  
 - **Tools Used**: Windows Command Line, PowerShell, ADAC, Group Policy Management Console  
-- **Commands Used**: `net`, `whoami`, `nltest`, `dsquery`, `Get-ADUser`, `New-ADUser`, `New-ADGroup`, `Add-ADGroupMember`, etc.  
+- **Commands Used**: `whoami/priv`, `Get-ADGroup`, `Get-ADUser`, `New-ADUser`, `New-ADGroup`, `Add-ADGroupMember`, etc.  
 - **Environment**: Simulated Windows Domain  
 - **Skills Practiced**: AD Enumeration, Group & User Management, GPO Implementation
 
@@ -24,19 +33,15 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 
 ## Steps Taken
 
-1. **Initial AD Reconnaissance**
-   - Executed commands like `net user /domain`, `nltest /dclist`, and `whoami /all` to gather domain and privilege info  
-   - Identified domain users, groups, and the domain controller (DC)
-
-2. **Organizational Unit & Group Creation**
+1. **Organizational Unit & Group Creation**
    - Used ADAC to create an `OU` named `Marketing`, and added a group `Marketing-Team` to it  
    - Created and deleted users as part of lifecycle management
 
-3. **Group Membership & GPO Assignment**
+2. **Group Membership & GPO Assignment**
    - Added users to the `Marketing-Team` group  
    - Created a Group Policy Object (`Marketing-Policy`) and linked it to the OU to enforce configuration rules
 
-4. **PowerShell Replication**
+3. **PowerShell Replication**
    - Repeated all tasks from user, group, and OU creation to GPO linking using `ActiveDirectory` PowerShell module  
    - Demonstrated automation-ready workflow for enterprise use
 
@@ -47,6 +52,7 @@ This lab introduced me to the fundamentals of **Active Directory (AD)** within a
 - Practiced both GUI and CLI approaches to AD administration  
 - Strengthened understanding of domain authentication, GPO behavior, and identity management  
 - Gained insight into operational and security implications of AD environments
+
 
 ---
 
