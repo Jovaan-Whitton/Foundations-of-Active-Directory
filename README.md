@@ -79,7 +79,7 @@ Active Directory serves as the backbone of identity and access management in nea
 
 ## Files Included
 
-- [Guided Lab](/Guided-Lab/AD-Fundamentals.md): Detailed documentation of tasks using ADAC and PowerShell  
+- [Fundamentals Guided Lab](/Guided-Lab/AD-Fundamentals.md): Detailed documentation of tasks using ADAC and PowerShell  
 - [AD Powershell Commands](/Guided-Lab/AD-Commands.md): PowerShell Command line reference used throughout the lab  
 
 ---
