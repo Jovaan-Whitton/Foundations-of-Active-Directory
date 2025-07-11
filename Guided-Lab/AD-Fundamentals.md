@@ -147,7 +147,7 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 ### ADAC / GPMC Method
 - Open Group Policy Management Console
 - Navigate to Securty Analysts Contol
-- Navigate to Removable storage access → Right-click All Removable Storage classess:Deny all access → Edit → Enable this configurations
+- Navigate to Removable storage access → Right-click All Removable Storage classes → Deny all access → Edit → Enable this configurations
 - Navigate to System → Right-click Prevent Access to Command prompt → Edit → Disable
 - Navigate to Interactive logon message text and interactive logon Message title → Right-click → Edit → Select Define Policy radial→ Define Policies
 - Navigate to Password Policy → Right-click Minimum Password length, Minimum Password Age, etc. → Properties → Select Define policy radial → Define policy
