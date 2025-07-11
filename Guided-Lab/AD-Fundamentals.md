@@ -32,17 +32,16 @@ In this lab, I was tasked with administering and securing a corporate Active Dir
 ## 1. Add New Users
 ### ADAC Method
 - Open **ADAC** 
-- Navigate to the IT OU. inlanefreight.local → Corp → Employees → HQ-NYC → IT
+- Navigate to the IT OU
+- INLANEFREIGHT.LOCAL → Corp → Employees → HQ-NYC → IT
 - Right-click the IT OU → New → User
 - Fill in user details for `Andromeda Cepheus`, `Orion Starchaser`, `Artemis Castillo`
 - Attributes included are full name, email, display name and that the user must change password at next logon
 
 ### PowerShell Equivalent
+```
 New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -AsPlainText(Read-Host "enter a secure password") -Force) -enabled $true -other attributes @{'title' "Analyst" ; 'mail' = `"a.castillo@inlanefreight.local"`}
-- UserPrincipalName `"jane.doe@labdomain.local"` 
--`Path "OU=Marketing,DC=labdomain,DC=local" `
--AccountPassword (ConvertTo-SecureString "P@ssw0rd123" -AsPlainText -Force)
--Enabled $true
+```
 
 <details>
   <summary> Add New User – Screenshots</summary>
@@ -64,7 +63,9 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Right-click → Delete → Yes
 
 ### PowerShell Equivalent
-- Remove-ADUser -Identity "pvalencia"
+```
+Remove-ADUser -Identity "pvalencia"
+```
 
 <details>
   <summary> Delete user – Screenshots</summary>
@@ -85,10 +86,15 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Ensure unlock users' account radial is selected
 
 ### Powershell Equivalent
-- Unlock-ADAccount -Identity amasters
-- Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@ssswordReset!" -Force)
-- Set-ADUser -Identity amasters -ChangePasswordatlogon $true
-
+```
+Unlock-ADAccount -Identity amasters
+```
+```
+Set-ADAccount -Identity 'amasters' -Reset -NewPassword (ConvertTo-SecureString -AsPlaintext "NewP@sswordReset!" -Force)
+```
+```
+Set-ADUser -Identity amasters -ChangePasswordatlogon $true
+```
 <details>
   <summary> Unlock user – Screenshots</summary>
 
@@ -108,8 +114,13 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Ensure the Group Scope is set to "Domain Local" and the Group Type is set to "Security"
 
 ### Powershell Equivalent
-- New-ADOrganizationUnit -Name "Security Analysts" -Path "OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local"
-- New-ADGroup -Name "Security Analysts" -SamAccoutName analyst -Groupcategory Security GroupScope Global -DisplayName "Security Analysts" -Path "OU= Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local" -Descritption "Members of this group are Security Analysts under the IT OU."
+```
+New-ADOrganizationUnit -Name "Security Analysts" -Path "OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local"
+```
+```
+New-ADGroup -Name "Security Analysts" -SamAccoutName analyst -Groupcategory Security GroupScope Global -DisplayName "Security Analysts" -Path "OU= Security Analysts,OU=IT,OU=HQ-
+NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=local" -Descritption "Members of this group are Security Analysts under the IT OU."
+```
 
 <details>
   <summary> Create OU and Group – Screenshots</summary>
@@ -130,7 +141,9 @@ New-ADUser -Name "Artemis Castillo" -AccountPassword (ConvertTo-SecureString -As
 - Right-click user → Add to Group → Specify Group
 
 ### Powershell Equivalent
+```
 Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
+```
 
 <details>
   <summary> Add Users to Group – Screenshots</summary>
@@ -147,8 +160,12 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
 ## 6. Apply Group Policy to the OU using Powershell and Modify User Configurations via GPMC
 ### PowerShell
-- Copy-GPO -SourceName "Logon Banner" -TargetName "Security Analysts Control"
-- New-GPLink -Name "Security Analysts Control" -Target "OU= Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=inlanefreight,DC=local" -LinkEnabled yes
+```
+Copy-GPO -SourceName "Logon Banner" -TargetName "Security Analysts Control"
+```
+```
+New-GPLink -Name "Security Analysts Control" -Target "OU= Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=local" -LinkEnabled yes
+````
 
 ### ADAC / GPMC Method
 - Open Group Policy Management Console
@@ -192,8 +209,12 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 - Move the computer to the Security Analysts OU we created.
 
 ### Powershell Equivalent
-- Add-Computer -ComputerName ACADEMY-IAD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
-- Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName, IPv4Address
+```
+Add-Computer -ComputerName ACADEMY-IAD-W10 -LocalCredentials ACADEMY-IAD-W10/image -DomainName INLANEFREIGHT.LOCAL -Credential INLANEFREIGHT\htb-student_adm -Restart
+```
+```
+Get-ADComputer -Identity "ACADEMY-IAD-W10" -Properties * | select CN,CanonicalName, IPv4Address
+```
 
 <details>
   <summary> Join Domain & Move Computer – Screenshots</summary>
