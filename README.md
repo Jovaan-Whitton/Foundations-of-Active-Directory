@@ -34,12 +34,12 @@ Active Directory serves as the backbone of identity and access management in nea
 ## Steps Taken
 
 1. **Organizational Unit & Group Creation**
-   - Used ADAC to create an `OU` named `Marketing`, and added a group `Marketing-Team` to it  
+   - Used ADAC to create an `OU` named `Security Analysts`, and added a group `Security Analysts` to it  
    - Created and deleted users as part of lifecycle management
 
 2. **Group Membership & GPO Assignment**
-   - Added users to the `Marketing-Team` group  
-   - Created a Group Policy Object (`Marketing-Policy`) and linked it to the OU to enforce configuration rules
+   - Added users to the `Security Analysts` group  
+   - Created a Group Policy Object (`Security Analysts Control`) and linked it to the OU to enforce configuration rules
 
 3. **PowerShell Replication**
    - Repeated all tasks from user, group, and OU creation to GPO linking using `ActiveDirectory` PowerShell module  
