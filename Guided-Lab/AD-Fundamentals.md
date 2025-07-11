@@ -196,7 +196,7 @@ Add-ADGroupMember -Identity analysts -Members ACastillo, ACepheus, OStarchaser
 
  ![Join Domain – ADAC](/screenshots/join-domain-adac.png)  
  ![Join Domain – ADAC](/screenshots/join-domain-adac-confirm.png)
- ![Move Computer to OU – ADAC](/screenshots/move-computer-ou.png)
+ ![Move Computer to OU – ADAC](/screenshots/move-computer-to-ou.png)
 
  </details>
 
